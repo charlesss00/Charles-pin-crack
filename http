@@ -1,0 +1,155 @@
+POST /verify HTTP/1.1
+Host: 192.168.1.8:8888
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 15
+Connection: close
+
+magicNumber=076
+HTTP/1.1 200 OK
+Date: Sun, 27 Apr 2025 15:35:46 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interactive Programming CTF</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #000000;
+        font-family: 'VT323', monospace;
+      }
+      
+      .terminal-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+      }
+      
+      .terminal {
+        position: relative;
+        width: 80%;
+        max-width: 600px;
+        padding: 30px;
+        background-color: #000000;
+        border: 2px solid #00ff00;
+        border-radius: 20px;  
+        box-shadow: 0 0 20px #00ff00, inset 0 0 10px rgba(0, 255, 0, 0.3);
+        text-align: center;
+      }
+      
+      h1 {
+        color: #00ff00;
+        font-size: 36px;
+        text-shadow: 0 0 10px #00ff00;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      
+      p {
+        color: #00ff00;
+        font-size: 16px;
+        margin-bottom: 30px;
+        letter-spacing: 0.5px;
+      }
+      
+      input {
+        background-color: #000000;
+        color: #00ff00;
+        border: 1px solid #00ff00;
+        border-radius: 1px;  
+        padding: 8px 15px;
+        font-family: 'VT323', monospace;
+        font-size: 16px;
+        width: 60%;
+        text-align: center;
+        margin-bottom: 20px;
+        outline: none;
+      }
+      
+      input:focus {
+        box-shadow: 0 0 10px #00ff00;
+      }
+      
+      button {
+        background-color: #000000;
+        color: #00ff00;
+        border: 1px solid #00ff00;
+        border-radius: 1px;  
+        padding: 8px 25px;
+        font-family: 'VT323', monospace;
+        font-size: 16px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: all 0.3s;
+      }
+      
+      button:hover {
+        background-color: #00ff00;
+        color: #000000;
+        box-shadow: 0 0 15px #00ff00;
+      }
+      
+      .footer {
+        color: #00ff00;
+        font-size: 12px;
+        margin-top: 30px;
+        opacity: 0.7;
+      }
+      
+      .error {
+        color: #ff3333;
+        margin-top: 15px;
+        text-shadow: 0 0 5px #ff3333;
+      }
+      
+      .fullscreen-notice {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #666;
+        font-size: 12px;
+        background-color: rgba(0,0,0,0.7);
+        padding: 5px 10px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="terminal-container">
+      <div class="terminal">
+        <h1>Integrative Programming (IT6) Challenge</h1>
+        <p>Test your knowledge in Python, HTTP, TCP-IP</p>
+        
+        <form id="magicForm" method="POST" action="/verify">
+          <input
+            id="magicNumber"
+            name="magicNumber"
+            type="password" 
+            placeholder="ENTER PIN"
+            required
+          />
+          <br>
+          <button type="submit">ACCESS</button>
+        </form>
+        
+        
+        <div class="error">Incorrect number. You can try again after 1s.</div>
+        
+        
+        <div class="footer">CREATED BY RCD 2025.04.23 - IT6</div>
+      </div>
+    </div>
+  </body>
+</html>
